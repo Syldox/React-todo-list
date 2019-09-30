@@ -3,25 +3,32 @@ import './App.css';
 import Tasks from './components/Tasks';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
-import {Route, Switch} from "react-router-dom";
+import {Route, Switch, Redirect} from "react-router-dom";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import { register } from './serviceWorker';
+// import { register } from './serviceWorker';
 import NavBar from './components/NavBar';
 // import Home from './components/Home';
+import NotFound from "./components/notFound";
 
 
 function App() {
   return (
-    <div className="container">
+   <React.Fragment>
       <NavBar/>
-      <Switch>
-      <Route path="/register" component={Register}/>
-      <Route path="/login" component={Login}/>
-      <Route path="/tasks" component={Tasks}/>
-      {/* <Route path="/" component={Home}/>  */}
-      </Switch>
-    </div>
+      <main className="container">
+          <Switch>
+          <Route path="/register" component={Register}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/tasks" component={Tasks}/>
+          <Route path="/not-found" component={NotFound}/>
+          {/* <Route path="/" component={Home}/>  */}
+          <Redirect from="/" exact to="tasks "/>
+          <Redirect to="not-found"/>
+        </Switch>
+      </main>
+   </React.Fragment>
+     
   );
 }
 
