@@ -26,7 +26,7 @@ const NavBar = () => {
 				<span className="navbar-toggler-icon" />
 			</button>
 			<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div className="navbar-nav">
+				<ul className="navbar-nav ml-auto">
 					<NavLink className="nav-item nav-link" to="/tasks">
 						<i className="fa fa-tasks" /> Tasks <span className="sr-only">(current)</span>
 					</NavLink>
@@ -36,7 +36,7 @@ const NavBar = () => {
 					<NavLink className="nav-item nav-link" to="/register">
 						<i class="fa fa-user-plus" /> Register
 					</NavLink>
-				</div>
+				</ul>
 			</div>
 		</nav>
 	);
