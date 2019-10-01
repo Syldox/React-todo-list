@@ -12,7 +12,7 @@ const NavBar = () => {
 					class="d-inline-block align-top"
 					alt=""
 				/>
-				<span className="p-2">Delivo-Notes</span>
+				<span className="p-2">Delivo-todo</span>
 			</Link>
 			<button
 				className="navbar-toggler"

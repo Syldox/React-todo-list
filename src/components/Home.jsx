@@ -5,14 +5,13 @@ export default function Home() {
 	return (
 		<div>
 			<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-				<ol className="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" className="active" />
-					<li data-target="#carouselExampleIndicators" data-slide-to="1" />
-					<li data-target="#carouselExampleIndicators" data-slide-to="2" />
-				</ol>
 				<div className="carousel-inner">
 					<div className="carousel-item active">
-						<img className="d-block w-100" alt="First slide" src={require('../assets/images/cim2.jpg')} />
+						<img
+							className="d-block w-100 mb-3"
+							alt="First slide"
+							src={require('../assets/images/E5PE1X.jpg')}
+						/>
 					</div>
 				</div>
 			</div>

@@ -43,8 +43,17 @@ class Tasks extends Component {
 		const { users } = this.state;
 		return (
 			<div>
-				<h1>Users List</h1>
-				<button onClick={this.handleAdd} className="btn btn-primary mb-3">
+				<h1 className="d-flex justify-content-center">Tasks List</h1>
+				<div className="d-flex justify-content-center">
+					<img
+						src={require('../assets/images/logo/logo-task.png')}
+						width="100"
+						height="100"
+						class="d-inline-block align-top"
+						alt=""
+					/>
+				</div>
+				<button onClick={this.handleAdd} className="btn btn-outline-info mb-3">
 					Add New Task
 				</button>
 				<table className="table">
@@ -63,7 +72,7 @@ class Tasks extends Component {
 							<td>{users.password}</td>
 							<td />
 							<td>
-								<button className="btn btn-danger btn-sm">Delete</button>
+								<button className="btn btn-outline-danger btn-sm">Delete</button>
 							</td>
 						</tr>
 						{/* )} */}
