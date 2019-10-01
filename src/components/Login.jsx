@@ -1,39 +1,51 @@
-import React from "react";
-import Joi from "joi-browser";
-import Form from "./common/form";
+import React from 'react';
+import Joi from 'joi-browser';
+import Form from './common/form';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends Form {
-  state = {
-    data: { username: "", password: "" },
-    errors: {} 
-  };
+	state = {
+		data: { username: '', password: '' },
+		errors: {}
+	};
 
-  schema = {
-    username: Joi.string()
-      .required()
-      .label("Username"),
-    password: Joi.string()
-      .required()
-      .label("Password")
-  };
+	schema = {
+		username: Joi.string().required().label('Username'),
+		password: Joi.string().required().label('Password')
+	};
 
-  doSubmit = () => {
-    // Call the server
-    console.log("Submitted");
-  };
+	doSubmit = () => {
+		// Call the server
+		console.log('Submitted');
+	};
 
-  render() {
-    return (
-      <div>
-        <h1>Login</h1>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderInput("username", "Username")}
-          {this.renderInput("password", "Password", "password")}
-          {this.renderButton("Login")}
-        </form>
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<div className="d-flex justify-content-center">
+					<img
+						src={require('../assets/images/logo/logo-task.png')}
+						width="100"
+						height="100"
+						class="d-inline-block align-top"
+						alt=""
+					/>
+				</div>
+				<h1 className="d-flex justify-content-center">Login</h1>
+				<form onSubmit={this.handleSubmit}>
+					{this.renderInput('username', 'Username')}
+					{this.renderInput('password', 'Password', 'password')}
+					{this.renderButton('Login')}
+				</form>
+				<h4>
+					Don't have an account? {' '}
+					<span>
+						<Link to="/register">Register</Link>
+					</span>
+				</h4>
+			</div>
+		);
+	}
 }
 
 export default LoginForm;
