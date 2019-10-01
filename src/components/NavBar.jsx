@@ -28,13 +28,13 @@ const NavBar = () => {
 			<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div className="navbar-nav">
 					<NavLink className="nav-item nav-link" to="/tasks">
-						Tasks <span className="sr-only">(current)</span>
+						<i className="fa fa-tasks" /> Tasks <span className="sr-only">(current)</span>
 					</NavLink>
 					<NavLink className="nav-item nav-link" to="/login">
-						login
+						<i className="fa fa-user" /> login
 					</NavLink>
 					<NavLink className="nav-item nav-link" to="/register">
-						Register
+						<i class="fa fa-user-plus" /> Register
 					</NavLink>
 				</div>
 			</div>
