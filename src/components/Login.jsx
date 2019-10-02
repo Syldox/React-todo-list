@@ -27,7 +27,7 @@ class LoginForm extends Form {
 						src={require('../assets/images/logo/logo-task.png')}
 						width="100"
 						height="100"
-						class="d-inline-block align-top"
+						className="d-inline-block align-top"
 						alt=""
 					/>
 				</div>

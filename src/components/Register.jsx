@@ -13,10 +13,6 @@ class RegisterForm extends Form {
 		errors: {}
 	};
 
-	componentDidMount() {
-		axios.post(apiEndpoint, {});
-	}
-
 	schema = {
 		username: Joi.string().required().email().label('Username'),
 		password: Joi.string().required().min(5).label('Password')
@@ -24,7 +20,10 @@ class RegisterForm extends Form {
 
 	doSubmit = () => {
 		// Call the server
-		console.log('Submitted');
+		axios.post(apiEndpoint).then((res) => {
+			const users = res.data;
+			console.log(users);
+		});
 	};
 
 	render() {

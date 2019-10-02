@@ -29,6 +29,10 @@ class Form extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 
+		const email = e.currentTarget.username.value;
+		const password = e.currentTarget.password.value;
+		console.log(email);
+		console.log(password);
 		const errors = this.validate();
 		this.setState({ errors: errors || {} });
 		if (errors) return;
