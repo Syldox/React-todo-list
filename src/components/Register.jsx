@@ -2,12 +2,20 @@ import React from 'react';
 import Joi from 'joi-browser';
 import Form from './common/form';
 import { Link } from 'react-router-dom';
+import { apiUrl } from '../config.json';
+import axios from 'axios';
+
+const apiEndpoint = apiUrl + '/users';
 
 class RegisterForm extends Form {
 	state = {
-		data: { username: '', password: '' },
+		data: {},
 		errors: {}
 	};
+
+	componentDidMount() {
+		axios.post(apiEndpoint, {});
+	}
 
 	schema = {
 		username: Joi.string().required().email().label('Username'),
@@ -27,13 +35,13 @@ class RegisterForm extends Form {
 						src={require('../assets/images/logo/logo-task.png')}
 						width="100"
 						height="100"
-						class="d-inline-block align-top"
+						className="d-inline-block align-top"
 						alt=""
 					/>
 				</div>
 				<h1 className="d-flex justify-content-center">Register</h1>
 				<form onSubmit={this.handleSubmit}>
-					{this.renderInput('username', 'Username')}
+					{this.renderInput('username', 'Email')}
 					{this.renderInput('password', 'Password', 'password')}
 					{this.renderButton('Register')}
 					<h4>

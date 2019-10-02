@@ -1,46 +1,39 @@
 import React, { Component } from 'react';
+import { apiUrl } from '../config.json';
 import axios from 'axios';
 
-const apiEndpoint = 'https://engine-staging.viame.ae/assessment/login';
+const apiEndpoint = apiUrl + '/user/task';
 
 class Tasks extends Component {
 	state = {
-		users: [
-			//    {
-			//     title:"",
-			//     description:"",
-			//     status: 1
-			//    }
+		todolist: [
+			{
+				title: 'React-assesment',
+				description: 'Complete the Front-end',
+				status: 200
+			}
 		]
 	};
 
-	// async componentDidMount(){
-	//     fetch(apiEndpoint)
-	//   .then(response => response.json())
-	//   .then(data => this.setState({
-	//       title:data.title,
-	//       description: data.description,
-	//       status:data.status
-	//   }))
+	// async componentDidMount() {
+	// 	fetch(apiEndpoint).then((response) => response.json()).then((data) =>
+	// 		this.setState({
+	// 			title: this.state.data.title,
+	// 			description: this.state.data.description,
+	// 			status: this.state.data.status
+	// 		})
+	// 	);
 	// }
 
-	componentDidMount() {
-		axios.get(apiEndpoint).then((res) => this.setState({ tasks: res.data }));
-	}
-
 	handleAdd = async () => {
-		const register = {
-			email: 'test@yes.com',
-			password: '12345'
-		};
-
-		const { data: user } = await axios.post(apiEndpoint, register);
-		const users = [ user, ...this.state.users ];
-		this.setState({ users });
+		// const obj = {title:'a',description:'b',status:'1'};
+		const { data: todolist } = await axios.post(apiEndpoint, this.state.todolist);
+		const todos = [ todolist, ...this.state.todolist ];
+		this.setState({ todos });
 	};
 
 	render() {
-		const { users } = this.state;
+		const { todolist } = this.state;
 		return (
 			<div>
 				<h1 className="d-flex justify-content-center">Tasks List</h1>
@@ -49,7 +42,7 @@ class Tasks extends Component {
 						src={require('../assets/images/logo/logo-task.png')}
 						width="100"
 						height="100"
-						class="d-inline-block align-top"
+						className="d-inline-block align-top"
 						alt=""
 					/>
 				</div>
@@ -66,16 +59,16 @@ class Tasks extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{/* {users.map(user=>  */}
-						<tr>
-							<td>{users.email}</td>
-							<td>{users.password}</td>
-							<td />
-							<td>
-								<button className="btn btn-outline-danger btn-sm">Delete</button>
-							</td>
-						</tr>
-						{/* )} */}
+						{todolist.map((todos) => (
+							<tr>
+								<td>{todos.title}</td>
+								<td>{todos.description}</td>
+								<td>{todos.status}</td>
+								<td>
+									<button className="btn btn-outline-danger btn-sm">Delete</button>
+								</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 			</div>

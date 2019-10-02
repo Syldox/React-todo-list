@@ -9,7 +9,7 @@ const NavBar = () => {
 					src={require('../assets/images/logo/logo-task.png')}
 					width="30"
 					height="30"
-					class="d-inline-block align-top"
+					className="d-inline-block align-top"
 					alt=""
 				/>
 				<span className="p-2">Delivo-todo</span>
@@ -34,7 +34,7 @@ const NavBar = () => {
 						<i className="fa fa-user" /> login
 					</NavLink>
 					<NavLink className="nav-item nav-link" to="/register">
-						<i class="fa fa-user-plus" /> Register
+						<i className="fa fa-user-plus" /> Register
 					</NavLink>
 				</ul>
 			</div>
