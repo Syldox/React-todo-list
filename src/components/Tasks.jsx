@@ -46,9 +46,62 @@ class Tasks extends Component {
 						alt=""
 					/>
 				</div>
-				<button onClick={this.handleAdd} className="btn btn-outline-info mb-3">
+				<button
+					onClick={this.handleAdd}
+					type="button"
+					className="btn btn-outline-info mb-3"
+					data-toggle="modal"
+					data-target="#exampleModal"
+				>
 					Add New Task
 				</button>
+
+				<div
+					className="modal fade"
+					id="exampleModal"
+					tabindex="-1"
+					role="dialog"
+					aria-labelledby="exampleModalLabel"
+					aria-hidden="true"
+				>
+					<div className="modal-dialog" role="document">
+						<div className="modal-content">
+							<div className="modal-header">
+								<h5 className="modal-title" id="exampleModalLabel">
+									Task
+								</h5>
+								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div className="modal-body">
+								<form>
+									<div className="form-group">
+										<label htmlFor="title" className="col-form-label">
+											Task-Title
+										</label>
+										<input type="text" class="form-control" id="recipient-name" />
+									</div>
+									<div class="form-group">
+										<label htmlFor="description" className="col-form-label">
+											Description:
+										</label>
+										<textarea class="form-control" id="message-text" />
+									</div>
+								</form>
+							</div>
+							<div className="modal-footer">
+								<button type="button" className="btn btn-outline-danger" data-dismiss="modal">
+									Close
+								</button>
+								<button type="button" className="btn btn-outline-info">
+									Add Task
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<table className="table">
 					<thead>
 						<tr>
