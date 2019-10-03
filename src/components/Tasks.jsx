@@ -60,7 +60,7 @@ class Tasks extends Component {
 					</thead>
 					<tbody>
 						{todolist.map((todos) => (
-							<tr>
+							<tr key={todolist.id}>
 								<td>{todos.title}</td>
 								<td>{todos.description}</td>
 								<td>{todos.status}</td>
