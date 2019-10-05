@@ -8,6 +8,7 @@ class Tasks extends Component {
 	state = {
 		todolist: [
 			{
+				id: 1,
 				title: 'React-assesment',
 				description: 'Complete the Front-end',
 				status: 200
@@ -80,13 +81,13 @@ class Tasks extends Component {
 										<label htmlFor="title" className="col-form-label">
 											Task-Title
 										</label>
-										<input type="text" class="form-control" id="recipient-name" />
+										<input type="text" className="form-control" id="recipient-name" />
 									</div>
-									<div class="form-group">
+									<div className="form-group">
 										<label htmlFor="description" className="col-form-label">
 											Description:
 										</label>
-										<textarea class="form-control" id="message-text" />
+										<textarea className="form-control" id="message-text" />
 									</div>
 								</form>
 							</div>
